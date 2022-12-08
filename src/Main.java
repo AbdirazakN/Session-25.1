@@ -27,12 +27,14 @@ public class Main {
                     3 --- Адамдардын ID си менен издоо
                     4 --- Адамдардын жашын алуу
                     5 --- Адамдардын тизмесин коруу
+                    6 --- Тизмедеги адамдан карызга акча алуу
                     (0) ----- Программаны жыйынтыктоо""");
 
             Scanner scanner = new Scanner(System.in);
             Scanner scanner1 = new Scanner(System.in);
             Scanner scanner2 = new Scanner(System.in);
             Scanner scanner3 = new Scanner(System.in);
+            Scanner scanner4 = new Scanner(System.in);
             int num = scanner.nextInt();
             switch (num) {
                 case 1:
@@ -51,6 +53,10 @@ public class Main {
                     break;
                 case 5:
                     System.out.println(personInterface.getAll(personList));
+                    break;
+                case 6:
+                    System.out.println("    Кимге кайсы адамдан карыз алып бергиниз келет жана канча суммада?");
+                    System.out.println(personInterface.getMoney(scanner3.nextLine(),scanner3.nextLine(),scanner4.nextInt(),personList,personList));
                     break;
             }
             if (num == 0){

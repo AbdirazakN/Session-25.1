@@ -3,6 +3,7 @@ package student.interfaces.impl;
 import student.classes.Person;
 import student.interfaces.PersonInterface;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -51,5 +52,27 @@ public class PersonInterfaceImpl implements PersonInterface {
             }
         }
         return resulSearch;
+    }
+
+    @Override
+    public String getMoney(String name, String name2, int money, List<Person> people, List<Person> people2) {
+        List<Person> resulSearch = new ArrayList<>();
+        for (Person person : creatPerson) {
+            if (person.getName().equals(name)) {
+                for (Person creatPerson1 : creatPerson) {
+                    if (creatPerson1.getName().equals(name2)) {
+                        if(creatPerson1.getMoney().doubleValue() >= money){
+                            creatPerson1.setMoney(creatPerson1.getMoney().subtract(person.getMoney()));
+                            person.setMoney(creatPerson1.getMoney().add(person.getMoney()));
+                            return "                    Эртерээк кайтарып бер.";
+                        }else {
+                            return "                         Анча акчам жок болчу.";
+                        }
+
+                    }
+                }
+            }
+        }
+        return "                    Мындай адам табылган жок!.";
     }
 }
