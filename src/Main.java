@@ -18,7 +18,7 @@ public class Main {
         Person person4 = new Person(789, "Bolot", LocalDate.of(2003, 2, 27), Gender.MALE, new BigDecimal(5000));
         Person person5 = new Person(122, "Nurkyz", LocalDate.of(2004, 8, 4), Gender.FEMALE, new BigDecimal(4000));
 
-        ArrayList<Person> personList = new ArrayList<>(List.of(person1, person2, person3, person4,person5));
+        ArrayList<Person> personList = new ArrayList<>(List.of(person1, person2, person3, person4, person5));
         PersonInterfaceImpl personInterface = new PersonInterfaceImpl();
         while (true) {
             System.out.println("""
@@ -56,10 +56,10 @@ public class Main {
                     break;
                 case 6:
                     System.out.println("    Кимге кайсы адамдан карыз алып бергиниз келет жана канча суммада?");
-                    System.out.println(personInterface.getMoney(scanner3.nextLine(),scanner3.nextLine(),scanner4.nextInt(),personList,personList));
+                    System.out.println(personInterface.getMoney(scanner3.nextLine(), scanner3.nextLine(), scanner4.nextInt(), personList, personList));
                     break;
             }
-            if (num == 0){
+            if (num == 0) {
                 System.out.println("                        PROGRAM FINISHED!");
                 break;
             }

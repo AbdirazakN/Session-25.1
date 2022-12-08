@@ -10,6 +10,7 @@ import java.util.*;
 public class PersonInterfaceImpl implements PersonInterface {
 
     List<Person> creatPerson = new ArrayList<>();
+
     @Override
     public String createPerson(List<Person> people) {
         creatPerson.addAll(people);
@@ -23,10 +24,10 @@ public class PersonInterfaceImpl implements PersonInterface {
 
     @Override
     public Map<Integer, Person> getAge(List<Person> people) {
-        Map<Integer,Person> ageMap = new TreeMap<>();
+        Map<Integer, Person> ageMap = new TreeMap<>();
         for (Person person : people) {
-            int age = LocalDate.now().getYear() -person.getDateOfBirth().getYear();
-            ageMap.put(age,person);
+            int age = LocalDate.now().getYear() - person.getDateOfBirth().getYear();
+            ageMap.put(age, person);
         }
         return ageMap;
     }
@@ -61,11 +62,11 @@ public class PersonInterfaceImpl implements PersonInterface {
             if (person.getName().equals(name)) {
                 for (Person creatPerson1 : creatPerson) {
                     if (creatPerson1.getName().equals(name2)) {
-                        if(creatPerson1.getMoney().doubleValue() >= money){
+                        if (creatPerson1.getMoney().doubleValue() >= money) {
                             creatPerson1.setMoney(creatPerson1.getMoney().subtract(person.getMoney()));
                             person.setMoney(creatPerson1.getMoney().add(person.getMoney()));
                             return "                    Эртерээк кайтарып бер.";
-                        }else {
+                        } else {
                             return "                         Анча акчам жок болчу.";
                         }
 
